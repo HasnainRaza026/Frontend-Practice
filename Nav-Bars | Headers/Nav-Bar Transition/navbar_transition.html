@@ -1,9 +1,10 @@
 <!-- 
-Nav Bar Transitioned
+Nav Bar Transition
 1. This is a traditionl nav-bar which contains only links, Switchs from nav bar to side bar via a hamburger and cancle icon
 2. Switching is aminated with smooth transition, plus hover effects are also smooth
 3. Switching is done using javascript
 4. As the nav bar and side bar contains same components, I have defined sinle 'ul' for both of them, for different screen sizes the ul is changed between flex-direction: row ==> lex-direction: column
+5. Also added an overlay, which will help to close the side bar by clicking anywhere on the body
 -->
 
 <!DOCTYPE html>
@@ -16,10 +17,11 @@ Nav Bar Transitioned
     <link rel="stylesheet" href="navbar_transition.css">
 </head>
 <body>
+    <label class="overlay js-overlay" onclick="hideSideBar()"></label>
     <nav>
         <ul class="outer-ul js-side-bar">
             <li class="main-li js-main-li">
-                <ul class="inner-ul">
+                <ul>
                     <li class="cancle-icon" onclick="hideSideBar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" fill="white"/></svg></a></li>  
 
                     <li class="nav-element home"><a href="#">Home</a></li>
@@ -36,13 +38,14 @@ Nav Bar Transitioned
 
     <script>
         function showSideBar() {
-            const ulElem = document.querySelector(".js-main-li")
-            ulElem.style.right = "0"
+            document.querySelector(".js-main-li").style.right = "0"
+            document.querySelector(".js-overlay").style.display = "block"
+            
         }
 
         function hideSideBar() {
-            const ulElem = document.querySelector(".js-main-li")
-            ulElem.style.right = "-100%"
+            document.querySelector(".js-main-li").style.right = "-100%"
+            document.querySelector(".js-overlay").style.display = "none"
         }
     </script>
 </body>

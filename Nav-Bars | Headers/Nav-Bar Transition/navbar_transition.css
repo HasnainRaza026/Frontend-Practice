@@ -23,6 +23,8 @@ body{
     background-color: var(--primary-color);
 }
 
+
+/* Nav Bar CSS */
 nav {
     background-color: var(--nav-color);
     width: 100%;
@@ -48,7 +50,7 @@ nav li {
     width: 100%;
 }
 
-.inner-ul {
+.main-li ul{
     width: 100%;
     height: 100%;
     display: flex;
@@ -57,6 +59,10 @@ nav li {
 
 .hamburger-icon, .cancle-icon {
     display: none;
+}
+
+.nav-element, .hamburger-icon, .cancle-icon {
+    transition: background-color 150ms ease-in;
 }
 
 .nav-element:hover, .hamburger-icon:hover, .cancle-icon:hover {
@@ -73,10 +79,14 @@ nav a {
     margin-right: auto;
 }
 
-
-/* Side Bar CSS */
-.display-on-mobile {
-
+.overlay {
+    width: 100vh;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    display: none;
 }
 
 /* Media Queries */
@@ -85,6 +95,7 @@ nav a {
         display: flex;
     }
 
+    /* Side Bar CSS */
     .main-li {
         background-color: var(--nav-color);
         position: fixed;
@@ -96,7 +107,7 @@ nav a {
         height: 100vh;
         width: 250px;
         box-shadow: -3px 0 10px rgba(0, 0, 0, 0.5);
-        transition: right 300ms ease-in-out;
+        transition: right 500ms ease-in-out;
     }
 
     .main-li ul {

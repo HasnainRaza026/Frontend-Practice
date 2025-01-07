@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    width: 100%;
+    background-color: black;
+    height: 50px;
+}
+
+nav ul {
+    width: 75%;
+    display: flex;
+    list-style: none; /* ??? */
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto;
+    /* gap: 10px; */
+}
+
+nav li {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+nav li:hover {
+    background-color: rgb(26, 25, 25);
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 30px;
+    /* display: flex;
+    align-items: center; */
+}
+
+
+.side-bar {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    height: 100vh;
+    width: 250px;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.side-bar li, .side-bar a  {
+    width: 100%;
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+@media (max-width:800px) {
+    .hide-on-small-screens {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: flex;
+    }
+}

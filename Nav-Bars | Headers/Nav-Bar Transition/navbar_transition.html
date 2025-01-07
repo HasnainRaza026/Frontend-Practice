@@ -1,0 +1,49 @@
+<!-- 
+Nav Bar Transitioned
+1. This is a traditionl nav-bar which contains only links, Switchs from nav bar to side bar via a hamburger and cancle icon
+2. Switching is aminated with smooth transition, plus hover effects are also smooth
+3. Switching is done using javascript
+4. As the nav bar and side bar contains same components, I have defined sinle 'ul' for both of them, for different screen sizes the ul is changed between flex-direction: row ==> lex-direction: column
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar Simple</title>
+
+    <link rel="stylesheet" href="navbar_transition.css">
+</head>
+<body>
+    <nav>
+        <ul class="outer-ul js-side-bar">
+            <li class="main-li js-main-li">
+                <ul class="inner-ul">
+                    <li class="cancle-icon" onclick="hideSideBar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" fill="white"/></svg></a></li>  
+
+                    <li class="nav-element home"><a href="#">Home</a></li>
+                    <li class="nav-element"><a href="#">About</a></li>
+                    <li class="nav-element"><a href="#">Products</a></li>
+                    <li class="nav-element"><a href="#">Blogs</a></li>
+                    <li class="nav-element"><a href="#">Login</a></li>                  
+                </ul>
+            </li>
+
+            <li class="hamburger-icon" onclick="showSideBar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 0 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white"/></svg></a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function showSideBar() {
+            const ulElem = document.querySelector(".js-main-li")
+            ulElem.style.right = "0"
+        }
+
+        function hideSideBar() {
+            const ulElem = document.querySelector(".js-main-li")
+            ulElem.style.right = "-100%"
+        }
+    </script>
+</body>
+</html>

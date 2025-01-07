@@ -1,57 +1,78 @@
+/* Setting variables */
+:root{
+    --primary-color: #11121a;
+    --nav-color: #000000;
+    --nav-hover-color: #0071FF;
+    --text-color: #c9c9c9;
+  }  
+
+
+/* General CSS */
 * {
     padding: 0;
     margin: 0;
 }
 
-body {
+html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    color: var(--text-color);
+}  
 
+body{
+    height: 100vh;
+    background-color: var(--primary-color);
+  }
+  
+
+/* Nav Bar CSS */
 nav {
     width: 100%;
-    background-color: black;
+    background-color: var(--nav-color);
     height: 50px;
 }
 
 nav ul {
     width: 75%;
+    height: 100%;
     display: flex;
-    list-style: none; /* ??? */
+    list-style: none; /* Set the list style to none (remove dots) */
     justify-content: flex-end;
     align-items: center;
     margin: auto;
-    /* gap: 10px; */
 }
 
 nav li {
-    height: 50px;
+    height: 100%;
     display: flex;
     align-items: center;
 }
 
 nav li:hover {
-    background-color: rgb(26, 25, 25);
+    background-color: var(--nav-hover-color);
 }
 
-nav li:first-child {
+nav .home {
     margin-right: auto;
 }
 
 nav a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     padding: 0 30px;
-    /* display: flex;
-    align-items: center; */
+}
+
+.hamburger-icon {
+    display: none;
 }
 
 
+/* Side Bar CSS */
 .side-bar {
-    background-color: black;
+    background-color: var(--nav-color);
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 999;
+    z-index: 10;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -64,10 +85,6 @@ nav a {
 
 .side-bar li, .side-bar a  {
     width: 100%;
-}
-
-.hamburger-icon {
-    display: none;
 }
 
 @media (max-width:800px) {

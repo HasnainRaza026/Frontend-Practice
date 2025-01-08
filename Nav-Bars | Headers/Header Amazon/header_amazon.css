@@ -7,6 +7,7 @@
     --header-color: #131921;
     --header-text-color: #ffffff;
     --search-button-color: #febd69;
+    --cart-item-quantity-color: #f08804;
 
     --font-type: 'Roboto', Arial;
 }
@@ -14,7 +15,6 @@
 * {
     padding: 0;
     margin: 0;
-    /* box-sizing: border-box; */
 }
 
 html {
@@ -37,6 +37,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    z-index: 100;
 }
 
 /* Common CSS for all 3 main div in Header container */
@@ -74,7 +76,7 @@ header {
     align-items: center;
 }
 
-.div-amazon-img img {
+.amazon-logo-large {
     width: 100px;
     height: 31;
     padding: 0 6px;
@@ -159,7 +161,7 @@ header {
 }
 
 .div-cart div {
-    color: #f08804;
+    color: var(--cart-item-quantity-color);
     font-weight: bold;
     font-size: 16px;
     position: relative;
@@ -173,4 +175,75 @@ header {
     top: 2px;
     left: 56px;
     font-weight: bold;
+}
+
+/* ----------------- CSS for header elements on small size screens --------------------- */
+.amazon-logo-mobile {
+    width: 34px;
+    height: 35px;
+    padding: 0 6px;
+    display: none;
+}
+
+.hamburger-icon {
+    display: none;
+    cursor: pointer;
+}
+
+
+/* -------------------------- CSS for sliding top bar --------------------------- */
+.top-bar {
+    position: fixed;
+    width: 100vw;
+    z-index: -99;
+    top: -100vh;
+    background-color: var(--header-color);  
+    padding: 10px 0;
+    transition: top 650ms ease-in-out;
+}
+
+.top-bar div{
+    width: 100%;    
+}
+
+.top-bar a {
+    width: 100%;
+    text-decoration: none;
+    color: var(--header-text-color);
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 0;
+}
+
+.top-bar a:hover {
+    background-color: #25333e;
+}
+
+.top-bar span {
+    color: var(--cart-item-quantity-color);
+}
+
+
+/* ------------------------------ Media Queries ------------------------------------ */
+@media (max-width: 800px) {
+    .div-amazon-img {
+        margin-right: 20px;
+    }   
+}
+
+@media (max-width: 575px) {
+    .amazon-logo-large, .div-order-and-return, .div-cart {
+        display: none;
+    }
+    
+    .amazon-logo-mobile, .hamburger-icon {
+        display: block;
+    }
+
+    .div-cart-order {
+        margin-left: 20px;
+        margin-right: 22px;
+    }
 }

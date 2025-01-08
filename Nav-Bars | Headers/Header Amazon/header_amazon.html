@@ -8,9 +8,20 @@
     <link rel="stylesheet" href="header_amazon.css">
 </head>
 <body>
+    <!-- Sliding top bar for small screens -->
+    <div class="top-bar js-top-bar">
+        <div>
+            <a href="#">Returns & Orders</a>
+        </div>
+        <div>
+            <a href="#">Cart (<span>2</span>)</a>
+        </div>
+    </div>
+
+    <!-- Main Header -->
     <header>
         <div class="div-amazon-img">
-            <a href="#"><img src="Assets/amazon-logo-white.png" alt="logo"></a>
+            <a href="#"><img class="amazon-logo-mobile" src="Assets/amazon-mobile-logo-white.png" alt="logo"><img class="amazon-logo-large" src="Assets/amazon-logo-white.png" alt="logo"></a>
         </div>
 
         <div class="div-search-bar">
@@ -19,6 +30,8 @@
         </div>
 
         <div class="div-cart-order">
+            <img class="hamburger-icon js-hamburger-icon" src="Assets/hamburger-menu.png" alt="hamburger-menu">
+
             <div class="div-order-and-return">
                 <a href="#">
                     <p class="returns">Returns</p>
@@ -34,7 +47,17 @@
                 </a>
             </div>
         </div>
-        
     </header>
+
+    <script>
+        document.querySelector(".js-hamburger-icon").addEventListener("click", () => {
+            const topBar = document.querySelector(".js-top-bar")
+            if (topBar.style.top != "58px") {
+                topBar.style.top = "58px";
+            } else {
+                topBar.style.top = "-100vh";
+            }
+        });
+    </script>
 </body>
 </html>

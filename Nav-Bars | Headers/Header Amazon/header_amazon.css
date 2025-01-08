@@ -1,0 +1,176 @@
+/* Import Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* General CSS */
+:root {
+    --header-color: #131921;
+    --header-text-color: #ffffff;
+    --search-button-color: #febd69;
+
+    --font-type: 'Roboto', Arial;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+
+html {
+    font-family: var(--font-type);
+}
+
+button, a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* ---------------------------------  Header CSS ----------------------------------------- */
+
+/* CSS for Header container */
+header {
+    background-color: var(--header-color);
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Common CSS for all 3 main div in Header container */
+.div-amazon-img, .div-search-bar, .div-cart-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-cart-order, .div-search-bar {
+    height: 100%;
+}
+
+/* Common CSS for 1st main div and inner div of 3rd main div */
+/* Border Hover Effect */
+.div-amazon-img, .div-order-and-return, .div-cart {
+    height: 80%;
+    border: 1px solid transparent;
+}
+
+.div-amazon-img:hover, .div-order-and-return:hover, .div-cart:hover {
+    border-color: white;
+}
+
+
+/* CSS for 1st div in Header */
+.div-amazon-img {
+    margin: 0 70px 0 20px;
+}
+
+.div-amazon-img a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.div-amazon-img img {
+    width: 100px;
+    height: 31;
+    padding: 0 6px;
+}
+
+/* CSS for 2nd div in Header */
+.div-search-bar {
+    flex: 1;
+    max-width: 950px;
+}
+
+.div-search-bar input {
+    width: 100%;
+    height: 70%;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 18px;
+    padding-left: 16px;
+}
+
+.div-search-bar input:focus{
+    outline: 3px solid orange; /* Set input field's outline when focused*/
+}
+
+
+.div-search-bar button img {
+    width: 22px;
+    height: 22px;
+}
+
+.div-search-bar button {
+    background-color: var(--search-button-color);
+    height: 70%;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0 15px;
+}
+
+/* CSS for 3rd div in Header */
+.div-cart-order {
+    margin-left: 30px;
+    margin-right: 15px;
+}
+
+.div-order-and-return, .div-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-order-and-return a{
+    width: 100%;
+    color: var(--header-text-color);
+    padding: 0 7px;
+}
+
+.div-order-and-return .returns {
+    font-size: 15px;
+}
+
+.div-order-and-return .orders {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.div-cart {
+    width: 93px;
+}
+
+.div-cart a {
+    height: 100%;
+    width: 100%;
+}
+
+.div-cart img {
+    width: 50px;
+    height: 35px;
+    position: absolute;
+    padding: 6px;
+}
+
+.div-cart div {
+    color: #f08804;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+    top: 5px;
+    left: 30px;
+}
+
+.div-cart p {
+    color: var(--header-text-color);
+    position: relative;
+    top: 2px;
+    left: 56px;
+    font-weight: bold;
+}

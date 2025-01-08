@@ -195,11 +195,16 @@ header {
 .top-bar {
     position: fixed;
     width: 100vw;
-    z-index: -99;
-    top: -100vh;
+    z-index: 99;
+    top: 0;
+    transform: translateY(-100%); /* Initially hidden */
     background-color: var(--header-color);  
     padding: 10px 0;
-    transition: top 650ms ease-in-out;
+    transition: transform 300ms ease-in-out; /* Using Transform to make transition smooth and faster */
+}
+
+.top-bar.show {
+    transform: translateY(60px); /* Slides in */
 }
 
 .top-bar div{

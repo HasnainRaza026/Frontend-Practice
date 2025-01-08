@@ -51,13 +51,10 @@
 
     <script>
         document.querySelector(".js-hamburger-icon").addEventListener("click", () => {
-            const topBar = document.querySelector(".js-top-bar")
-            if (topBar.style.top != "58px") {
-                topBar.style.top = "58px";
-            } else {
-                topBar.style.top = "-100vh";
-            }
-        });
+    const topBar = document.querySelector(".js-top-bar");
+    topBar.classList.toggle("show"); // Toggle the 'show' class (adds and removes the class from element)
+});
+
     </script>
 </body>
 </html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Progress Bar</title>
+    
+    <style> 
+        /* Import Roboto Font */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root  {
+            --height: 1.8em;
+        } 
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .progress-bar-container {
+            width: 50%;
+        }
+
+        .progress-bar-headings {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Roboto', Arial;
+            font-weight: 500;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar-headings .preparing {
+            color: #067d62;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: var(--height);
+            border: 1px solid #c8c8c8;
+            border-radius: calc(var(--height)/2);
+            position: relative;
+        }
+
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            background-color: green;
+            border-radius: calc(var(--height)/2);
+            height: 100%;
+            width: calc(var(--width, 0) *1%);
+            min-width: 5%;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar-container">
+        <div class="progress-bar-headings">
+            <p class="preparing">Preparing</p>
+            <p class="shipped">Shipped</p>
+            <p class="delivered">Delivered</p>
+        </div>
+        <div class="progress-bar" style="--width: 5"></div>
+    </div>
+
+    <script>
+        const divElem = document.querySelector('.progress-bar');
+        setInterval(() => {
+            const width = parseFloat(getComputedStyle(divElem).getPropertyValue("--width"));
+            divElem.style.setProperty("--width", width + 0.1)
+        }, 5)
+    </script>
+</body>
+</html>
